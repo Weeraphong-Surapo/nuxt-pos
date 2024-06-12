@@ -420,6 +420,8 @@
 </template>
 
 <script setup lang="ts">
+import type { productData } from "~/types/productType";
+import type { CartItem } from "~/types/cartType";
 definePageMeta({
   layout: false,
 });
@@ -438,20 +440,13 @@ const showToast = (text: string) => {
   });
 };
 
-const products = ref([]);
-
+const products = ref<productData[]>([]);
 const type_pay = ref(0);
-
-const inputMoney = ref("");
-
-const inputVat = ref(0);
-
+const inputMoney = ref<string>("");
+const inputVat = ref<number>(0);
 const loading = ref(false);
-
-const carts = ref([]);
-
-const customers = ref([]);
-
+const carts = ref<CartItem[]>([]);
+const customers = ref<any[]>([]);
 const customer = ref(0);
 
 const resultInputMoney = computed(() => {
@@ -480,7 +475,7 @@ const addNumberCalc = (number: string) => {
   inputMoney.value += number;
 };
 
-const addToCart = (product: string) => {
+const addToCart = (product: any) => {
   // Check if the product already exists in the cart
   const existingItemIndex = carts.value.findIndex((item) => item.id === product.id);
 
@@ -491,14 +486,15 @@ const addToCart = (product: string) => {
       carts.value[existingItemIndex].price * carts.value[existingItemIndex].qty;
   } else {
     // If the product does not exist, add it to the cart
-    const newItem = {
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      stock: product.quantity,
+    const newItem: CartItem = {
+      id: String(product.id),
+      name: String(product.name),
+      price: Number(product.price),
+      stock: Number(product.quantity),
+      cost: Number(product.cost),
       qty: 1,
       //   stock:quantity,
-      total_price: product.price * 1,
+      total_price: Number(product.price) * 1,
     };
     carts.value.push(newItem);
 
@@ -521,11 +517,13 @@ const plusQty = (productId: string) => {
   const index = carts.value.findIndex((item) => item.id === productId);
 
   if (index !== -1) {
+    const cartItem = carts.value[index] as CartItem;
+
     // Increase the quantity
-    if (carts.value[index].qty < carts.value[index].stock) {
-      carts.value[index].qty++;
+    if (cartItem.qty < cartItem.stock) {
+      cartItem.qty++;
       // Update the total price for the product
-      carts.value[index].total_price = carts.value[index].price * carts.value[index].qty;
+      cartItem.total_price = cartItem.price * cartItem.qty;
     }
   }
   localStorage.setItem("cart", JSON.stringify(carts.value));
@@ -548,7 +546,7 @@ const decreateQty = (productId: string) => {
 };
 
 const paybalance = () => {
-  inputMoney.value = Number(total_price_vat_show.value);
+  inputMoney.value = String(total_price_vat_show.value);
 };
 
 const total_price = computed(() => {
@@ -579,11 +577,11 @@ const formatNumber = (vatAmount: number) => {
   }).format(vatAmount);
 };
 const changeMoney = computed(() => {
-  return total_price_vat_show.value - inputMoney.value;
+  return total_price_vat_show.value - Number(inputMoney.value);
 });
 
 const clearInput = () => {
-  inputMoney.value = 0;
+  inputMoney.value = "0";
 };
 
 const decreaseLastDigit = () => {
@@ -598,9 +596,24 @@ const loadCart = () => {
   }
 };
 
+// Assuming carts is a reactive state
+const totalCost = computed(() => {
+  return carts.value.reduce((acc, c) => acc + c.cost, 0);
+});
+
+const totalRevenue = computed(() => {
+  return carts.value.reduce((acc, c) => acc + c.price * c.qty, 0);
+});
+
+const totalProfit = computed(() => {
+  return totalRevenue.value - totalCost.value;
+});
+
 const createListSale = async () => {
   loading.value = true;
   let dataInsert;
+
+  // Iterate over each cart item and sum up the values
 
   if (type_pay.value == 0) {
     dataInsert = {
@@ -612,6 +625,7 @@ const createListSale = async () => {
       change_money: changeMoney.value,
       type_pay: type_pay.value,
       orders: carts.value,
+      profit: totalProfit.value,
     };
   } else {
     dataInsert = {
@@ -623,6 +637,7 @@ const createListSale = async () => {
       change_money: changeMoney.value,
       type_pay: type_pay.value,
       orders: carts.value,
+      profit: totalProfit.value,
     };
   }
   try {
@@ -634,19 +649,15 @@ const createListSale = async () => {
       body: JSON.stringify(dataInsert),
     });
     const data = await response.json();
-    carts.value = []
-    localStorage.removeItem('cart')
-    loadCart()
-    
+    carts.value = [];
+    localStorage.removeItem("cart");
+    loadCart();
+
     showToast("บันทึกรายการขายเรียบร้อย");
   } catch (error) {
     console.log(error);
   } finally {
     loading.value = false;
-    const modal = document.getElementById("staticBackdrop");
-    // const modalElement = document.getElementById('staticBackdrop')
-
-    modal.classList.remove("show");
   }
 };
 
