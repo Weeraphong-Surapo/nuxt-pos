@@ -426,19 +426,7 @@ definePageMeta({
   layout: false,
 });
 
-interface Toast {
-  success: (message: string, options?: { position?: string; timeout?: number }) => void;
-}
-import { useNuxtApp } from "#app";
-const nuxtApp = useNuxtApp();
 
-const showToast = (text: string) => {
-  const toastInstance = nuxtApp.$toast as Toast;
-  toastInstance.success(text, {
-    position: "bottom-right",
-    timeout: 2500,
-  });
-};
 
 const products = ref<productData[]>([]);
 const type_pay = ref(0);
@@ -653,7 +641,6 @@ const createListSale = async () => {
     localStorage.removeItem("cart");
     loadCart();
 
-    showToast("บันทึกรายการขายเรียบร้อย");
   } catch (error) {
     console.log(error);
   } finally {

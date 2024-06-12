@@ -49,19 +49,7 @@ const form = ref({
 const categorys = ref<categoryData[] | null>(null);
 
 const loading = ref(false);
-interface Toast {
-  success: (message: string, options?: { position?: string; timeout?: number }) => void;
-}
-import { useNuxtApp } from "#app";
-const nuxtApp = useNuxtApp();
 
-const showToast = (text: string) => {
-  const toastInstance = nuxtApp.$toast as Toast;
-  toastInstance.success(text, {
-    position: "bottom-right",
-    timeout: 2500,
-  });
-};
 
 const createCategory = async () => {
   loading.value = true;
@@ -74,7 +62,7 @@ const createCategory = async () => {
       body: JSON.stringify(form.value),
     });
     const data = await response.json();
-    showToast("บันทึกสำเร็จ");
+
     navigateTo({ name: "category-subcategory" });
   } catch (e) {
     console.log(e);

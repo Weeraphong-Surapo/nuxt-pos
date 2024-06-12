@@ -48,19 +48,6 @@
 <script setup lang="ts">
 import type { categoryData } from "~/types/categoryType";
 import type { subCategoryFormData } from "~/types/subCategoryType";
-interface Toast {
-  success: (message: string, options?: { position?: string; timeout?: number }) => void;
-}
-import { useNuxtApp } from "#app";
-const nuxtApp = useNuxtApp();
-
-const showToast = (text: string) => {
-  const toastInstance = nuxtApp.$toast as Toast;
-  toastInstance.success(text, {
-    position: "bottom-right",
-    timeout: 2500,
-  });
-};
 
 const router = useRoute();
 const form = ref<subCategoryFormData | null>(null);
@@ -101,7 +88,7 @@ const updateCategory = async () => {
       body: JSON.stringify(updateValue),
     });
     const data = await response.json();
-    showToast("อัพเดตสำเร็จ");
+
     navigateTo({ name: "category-subcategory" });
   } catch (e) {
     console.log(e);

@@ -34,19 +34,7 @@
 
 <script setup lang="ts">
 import type { Header } from "vue3-easy-data-table";
-interface Toast {
-  success: (message: string, options?: { position?: string; timeout?: number }) => void;
-}
-import { useNuxtApp } from "#app";
-const nuxtApp = useNuxtApp();
 
-const showToast = (text: string) => {
-  const toastInstance = nuxtApp.$toast as Toast;
-  toastInstance.success(text, {
-    position: "bottom-right",
-    timeout: 2500,
-  });
-};
 
 const loading = ref(false)
 const showModal = ref(false);
@@ -77,7 +65,6 @@ const deleteCategory = async () => {
   } catch (error) {
     console.log(error);
   }finally {
-    showToast("ลบข้อมูลสำเร็จ")
     showModal.value = false;
     loading.value = false
   }

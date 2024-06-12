@@ -1,4 +1,4 @@
-import { hasInjectionContext, inject, version, unref, defineComponent, ref, provide, createElementBlock, h, computed, shallowReactive, watch, Suspense, nextTick, Transition, mergeProps, useSSRContext, createApp, effectScope, reactive, getCurrentInstance, markRaw, isRef, isReactive, toRef, toRaw, onErrorCaptured, onServerPrefetch, createVNode, resolveDynamicComponent, getCurrentScope, onScopeDispose, defineAsyncComponent, shallowRef, isReadonly, toRefs, withCtx, isShallow } from 'file:///Applications/nodejs_project/full_stack_nuxt_express/frontend/node_modules/vue/index.mjs';
+import { hasInjectionContext, inject, version, unref, defineComponent, ref, provide, createElementBlock, h, computed, shallowReactive, watch, Suspense, nextTick, Transition, mergeProps, useSSRContext, createApp, effectScope, reactive, markRaw, isRef, isReactive, toRef, toRaw, onErrorCaptured, onServerPrefetch, createVNode, resolveDynamicComponent, getCurrentInstance, getCurrentScope, onScopeDispose, defineAsyncComponent, shallowRef, isReadonly, toRefs, withCtx, isShallow } from 'file:///Applications/nodejs_project/full_stack_nuxt_express/frontend/node_modules/vue/index.mjs';
 import { $fetch } from 'file:///Applications/nodejs_project/full_stack_nuxt_express/frontend/node_modules/ofetch/dist/node.mjs';
 import { b as baseURL } from '../_/renderer.mjs';
 import { createHooks } from 'file:///Applications/nodejs_project/full_stack_nuxt_express/frontend/node_modules/hookable/dist/index.mjs';
@@ -11,7 +11,6 @@ import { withQuery, hasProtocol, parseURL, isScriptProtocol, joinURL, isSamePath
 import { toRouteMatcher, createRouter as createRouter$1 } from 'file:///Applications/nodejs_project/full_stack_nuxt_express/frontend/node_modules/radix3/dist/index.mjs';
 import { defu } from 'file:///Applications/nodejs_project/full_stack_nuxt_express/frontend/node_modules/defu/dist/defu.mjs';
 import Vue3EasyDataTable from 'file:///Applications/nodejs_project/full_stack_nuxt_express/frontend/node_modules/vue3-easy-data-table/dist/vue3-easy-data-table.es.js';
-import Toast, { useToast } from 'file:///Applications/nodejs_project/full_stack_nuxt_express/frontend/node_modules/vue-toastification/dist/index.cjs';
 import { ssrRenderSuspense, ssrRenderComponent, ssrRenderVNode } from 'file:///Applications/nodejs_project/full_stack_nuxt_express/frontend/node_modules/vue/server-renderer/index.mjs';
 import 'file:///Applications/nodejs_project/full_stack_nuxt_express/frontend/node_modules/vue-bundle-renderer/dist/runtime.mjs';
 import 'file:///Applications/nodejs_project/full_stack_nuxt_express/frontend/node_modules/devalue/index.js';
@@ -570,7 +569,7 @@ const _routes = [
     meta: __nuxt_page_meta$l || {},
     alias: (__nuxt_page_meta$l == null ? void 0 : __nuxt_page_meta$l.alias) || [],
     redirect: __nuxt_page_meta$l == null ? void 0 : __nuxt_page_meta$l.redirect,
-    component: () => import('./login-BJKjxpiK.mjs').then((m) => m.default || m)
+    component: () => import('./login-WkzVInA8.mjs').then((m) => m.default || m)
   },
   {
     name: "category-id",
@@ -578,7 +577,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./_id_-DVnCZ3fp.mjs').then((m) => m.default || m)
+    component: () => import('./_id_-CEXjPzpB.mjs').then((m) => m.default || m)
   },
   {
     name: "category-create",
@@ -586,7 +585,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./create-LWVF5V54.mjs').then((m) => m.default || m)
+    component: () => import('./create-CeWLWxpF.mjs').then((m) => m.default || m)
   },
   {
     name: "category",
@@ -594,7 +593,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./index-IZU9ArdU.mjs').then((m) => m.default || m)
+    component: () => import('./index-DYZI9GgZ.mjs').then((m) => m.default || m)
   },
   {
     name: "category-subcategory-id",
@@ -602,7 +601,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./_id_-aF09_Vp6.mjs').then((m) => m.default || m)
+    component: () => import('./_id_-ByAU1oN2.mjs').then((m) => m.default || m)
   },
   {
     name: "category-subcategory-create",
@@ -610,7 +609,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./create-CwibTfhx.mjs').then((m) => m.default || m)
+    component: () => import('./create-DILmIbzf.mjs').then((m) => m.default || m)
   },
   {
     name: "category-subcategory",
@@ -618,7 +617,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./index-BJXZrFrB.mjs').then((m) => m.default || m)
+    component: () => import('./index-BWGV9mV_.mjs').then((m) => m.default || m)
   },
   {
     name: "customer-id",
@@ -626,7 +625,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./_id_-B3bPt6fv.mjs').then((m) => m.default || m)
+    component: () => import('./_id_-DaDxqZTk.mjs').then((m) => m.default || m)
   },
   {
     name: "customer-create",
@@ -634,7 +633,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./create-BuDRulHj.mjs').then((m) => m.default || m)
+    component: () => import('./create-CGqJpT58.mjs').then((m) => m.default || m)
   },
   {
     name: "customer",
@@ -642,7 +641,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./index-BPWhWx0p.mjs').then((m) => m.default || m)
+    component: () => import('./index-DE7x64hA.mjs').then((m) => m.default || m)
   },
   {
     name: "index",
@@ -650,7 +649,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./index-De5V6PM0.mjs').then((m) => m.default || m)
+    component: () => import('./index-dm1jcr0F.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$a == null ? void 0 : __nuxt_page_meta$a.name) ?? "pos",
@@ -658,7 +657,7 @@ const _routes = [
     meta: __nuxt_page_meta$a || {},
     alias: (__nuxt_page_meta$a == null ? void 0 : __nuxt_page_meta$a.alias) || [],
     redirect: __nuxt_page_meta$a == null ? void 0 : __nuxt_page_meta$a.redirect,
-    component: () => import('./index-kfpLf9tJ.mjs').then((m) => m.default || m)
+    component: () => import('./index-DIk6tLiS.mjs').then((m) => m.default || m)
   },
   {
     name: "product-id",
@@ -666,7 +665,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./_id_-DT4JzZ7T.mjs').then((m) => m.default || m)
+    component: () => import('./_id_-CYDp2P9J.mjs').then((m) => m.default || m)
   },
   {
     name: "product-create",
@@ -674,7 +673,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./create-5DuZq1l-.mjs').then((m) => m.default || m)
+    component: () => import('./create-roFt081_.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$7 == null ? void 0 : __nuxt_page_meta$7.name) ?? "product",
@@ -682,7 +681,7 @@ const _routes = [
     meta: __nuxt_page_meta$7 || {},
     alias: (__nuxt_page_meta$7 == null ? void 0 : __nuxt_page_meta$7.alias) || [],
     redirect: __nuxt_page_meta$7 == null ? void 0 : __nuxt_page_meta$7.redirect,
-    component: () => import('./index-DVXlFvBU.mjs').then((m) => m.default || m)
+    component: () => import('./index-Cysc2_gG.mjs').then((m) => m.default || m)
   },
   {
     name: "report",
@@ -690,7 +689,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./index-BhFTL6Vy.mjs').then((m) => m.default || m)
+    component: () => import('./index-CJrVJzDs.mjs').then((m) => m.default || m)
   },
   {
     name: "sale-id",
@@ -698,7 +697,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./_id_-BrQEZX7Z.mjs').then((m) => m.default || m)
+    component: () => import('./_id_-BSqXF1cY.mjs').then((m) => m.default || m)
   },
   {
     name: "sale",
@@ -706,7 +705,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./index-CWAUOgGc.mjs').then((m) => m.default || m)
+    component: () => import('./index--SE_XPqZ.mjs').then((m) => m.default || m)
   },
   {
     name: "user-id",
@@ -714,7 +713,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./_id_-x0ap2TMZ.mjs').then((m) => m.default || m)
+    component: () => import('./_id_-h-PSIJb9.mjs').then((m) => m.default || m)
   },
   {
     name: "user-create",
@@ -722,7 +721,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./create-DPg8JN_S.mjs').then((m) => m.default || m)
+    component: () => import('./create-B6MbGzhS.mjs').then((m) => m.default || m)
   },
   {
     name: "user",
@@ -730,7 +729,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./index-bWL9biAw.mjs').then((m) => m.default || m)
+    component: () => import('./index-ClFbAC8i.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.name) ?? "user-profile",
@@ -738,7 +737,7 @@ const _routes = [
     meta: __nuxt_page_meta || {},
     alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
     redirect: __nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect,
-    component: () => import('./profile-BmUhQzuI.mjs').then((m) => m.default || m)
+    component: () => import('./profile-f8XTV78h.mjs').then((m) => m.default || m)
   }
 ];
 const _wrapIf = (component, props, slots) => {
@@ -848,7 +847,7 @@ const globalMiddleware = [
   manifest_45route_45rule
 ];
 const namedMiddleware = {
-  auth: () => import('./auth-C2S73lPK.mjs')
+  auth: () => import('./auth-B9ahW_DP.mjs')
 };
 const plugin$1 = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:router",
@@ -1602,23 +1601,18 @@ const components_plugin_KR1HBZs4kY = /* @__PURE__ */ defineNuxtPlugin({
 const easy_data_table_PL54rUoJny = /* @__PURE__ */ defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component("EasyDataTable", Vue3EasyDataTable);
 });
-const toast_ysMjUcU7eJ = /* @__PURE__ */ defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.use(Toast);
-  nuxtApp.provide("toast", useToast());
-});
 const plugins = [
   unhead_KgADcZ0jPj,
   plugin$1,
   plugin,
   revive_payload_server_eJ33V7gbc6,
   components_plugin_KR1HBZs4kY,
-  easy_data_table_PL54rUoJny,
-  toast_ysMjUcU7eJ
+  easy_data_table_PL54rUoJny
 ];
 const layouts = {
-  custom: () => import('./custom-2hJH48T-.mjs').then((m) => m.default || m),
-  default: () => import('./default-B4_k80jD.mjs').then((m) => m.default || m),
-  login: () => import('./login-sstxVfrS.mjs').then((m) => m.default || m)
+  custom: () => import('./custom-DFwauI4X.mjs').then((m) => m.default || m),
+  default: () => import('./default-DHw1klxM.mjs').then((m) => m.default || m),
+  login: () => import('./login-v2dAvnTd.mjs').then((m) => m.default || m)
 };
 const LayoutLoader = defineComponent({
   name: "LayoutLoader",
@@ -1912,8 +1906,8 @@ const _sfc_main$1 = {
     const statusMessage = _error.statusMessage ?? (is404 ? "Page Not Found" : "Internal Server Error");
     const description = _error.message || _error.toString();
     const stack = void 0;
-    const _Error404 = defineAsyncComponent(() => import('./error-404-Dz2CzDHu.mjs').then((r) => r.default || r));
-    const _Error = defineAsyncComponent(() => import('./error-500-GjIJL2w8.mjs').then((r) => r.default || r));
+    const _Error404 = defineAsyncComponent(() => import('./error-404-DP6oyI2c.mjs').then((r) => r.default || r));
+    const _Error = defineAsyncComponent(() => import('./error-500-C2R5bUm0.mjs').then((r) => r.default || r));
     const ErrorTemplate = is404 ? _Error404 : _Error;
     return (_ctx, _push, _parent, _attrs) => {
       _push(ssrRenderComponent(unref(ErrorTemplate), mergeProps({ statusCode: unref(statusCode), statusMessage: unref(statusMessage), description: unref(description), stack: unref(stack) }, _attrs), null, _parent));
@@ -1991,5 +1985,5 @@ let entry;
 }
 const entry$1 = (ssrContext) => entry(ssrContext);
 
-export { _export_sfc as _, useNuxtApp as a, useRouter as b, useRuntimeConfig as c, navigateTo as d, entry$1 as default, defineStore as e, defineNuxtRouteMiddleware as f, executeAsync as g, injectHead as i, nuxtLinkDefaults as n, resolveUnrefHeadInput as r, useRoute as u };
+export { _export_sfc as _, useRouter as a, useRuntimeConfig as b, navigateTo as c, defineStore as d, entry$1 as default, defineNuxtRouteMiddleware as e, executeAsync as f, injectHead as i, nuxtLinkDefaults as n, resolveUnrefHeadInput as r, useRoute as u };
 //# sourceMappingURL=server.mjs.map

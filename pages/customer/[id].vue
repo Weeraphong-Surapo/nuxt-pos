@@ -47,19 +47,7 @@
 
 <script setup lang="ts">
 const router = useRoute();
-interface Toast {
-  success: (message: string, options?: { position?: string; timeout?: number }) => void;
-}
-import { useNuxtApp } from "#app";
-const nuxtApp = useNuxtApp();
 
-const showToast = (text: string) => {
-  const toastInstance = nuxtApp.$toast as Toast;
-  toastInstance.success(text, {
-    position: "bottom-right",
-    timeout: 2500,
-  });
-};
 const form = ref({
   full_name: "",
   phone: "",
@@ -97,7 +85,7 @@ const updateCustomer = async () => {
       },
       body: JSON.stringify(form.value),
     });
-    showToast("อัพเดตสำเร็จ");
+
     navigateTo({ name: "customer" });
   } catch (error) {
     console.log(error);
